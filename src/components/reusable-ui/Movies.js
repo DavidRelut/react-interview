@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styled from 'styled-components';
 import Movie from './Movie';
 
 const moviesStatic = [
@@ -33,12 +34,16 @@ export default function Movies() {
   };
 
   return (
-    <div>
+    <MoviesStyled>
       {movies.map((movie) => (
         <div key={movie.id}>
           <Movie movieData={movie} handleDelete={handleDelete}/>
         </div>
       ))}
-    </div>
+    </MoviesStyled>
   );
 }
+
+const MoviesStyled = styled.div`
+  display: flex;
+`
