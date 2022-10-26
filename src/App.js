@@ -1,6 +1,6 @@
+import HomePage from './components/pages/HomePage';
+import './index.css';
 
-function App() {
-  return <div>Home</div>
+export default function App() {
+  return <HomePage />;
 }
-
-export default App;
