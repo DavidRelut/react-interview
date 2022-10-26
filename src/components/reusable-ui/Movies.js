@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styled from 'styled-components';
 import Movie from './Movie';
 
 const moviesStatic = [
@@ -22,11 +23,27 @@ export default function Movies() {
 
   const [movies, setMovies] = useState(moviesStatic);
 
+  const handleDelete = (id) => {
+    const moviesCopy = [...movies];
+
+    const moviesCopyUpdated = moviesCopy.filter(
+      (movie) => movie.id !== id,
+    );
+
+    setMovies(moviesCopyUpdated);
+  };
+
   return (
-    <div>
+    <MoviesStyled>
       {movies.map((movie) => (
-        <Movie movieData={movie} />
+        <div key={movie.id}>
+          <Movie movieData={movie} handleDelete={handleDelete}/>
+        </div>
       ))}
-    </div>
+    </MoviesStyled>
   );
 }
+
+const MoviesStyled = styled.div`
+  display: flex;
+`

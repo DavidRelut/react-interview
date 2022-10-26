@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 
-export default function Movie({ movieData }) {
+export default function Movie({ movieData, handleDelete }) {
+
+
 
   return (
     <MovieStyled>
       <div className="movieCard">
+        <button onClick={() => handleDelete(movieData.id)} className="btnDelete">X</button>
         <h1>{movieData.title}</h1>
         <p className="category">{movieData.category}</p>
         <div className="button">
@@ -26,6 +29,7 @@ const MovieStyled = styled.div`
     width: 310px;
     height: 200px;
     text-align: center;
+    position: relative;
   }
 
   h1 {
@@ -47,6 +51,12 @@ const MovieStyled = styled.div`
     display: flex;
     justify-content: space-evenly;
     padding: 15px 15px;
+  }
+
+  .btnDelete {
+    position: absolute;
+    top: 5%;
+    right: 8%;
   }
 
   p {
