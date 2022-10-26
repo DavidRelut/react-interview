@@ -1,5 +1,5 @@
 import HomePage from './components/pages/HomePage';
-import './styles.css';
+import './index.css';
 
 export default function App() {
   return <HomePage />;
