@@ -22,10 +22,22 @@ export default function Movies() {
 
   const [movies, setMovies] = useState(moviesStatic);
 
+  const handleDelete = (id) => {
+    const moviesCopy = [...movies];
+
+    const moviesCopyUpdated = moviesCopy.filter(
+      (movie) => movie.id !== id,
+    );
+
+    setMovies(moviesCopyUpdated);
+  };
+
   return (
     <div>
       {movies.map((movie) => (
-        <Movie movieData={movie} />
+        <div key={movie.id}>
+          <Movie movieData={movie} handleDelete={handleDelete}/>
+        </div>
       ))}
     </div>
   );
