@@ -46,4 +46,5 @@ export default function Movies() {
 
 const MoviesStyled = styled.div`
   display: flex;
-`
+  flex-wrap: wrap;
+`;
