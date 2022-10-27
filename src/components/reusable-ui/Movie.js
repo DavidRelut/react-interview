@@ -19,11 +19,17 @@ export default function Movie({
         <h1>{movieData.title}</h1>
         <p className="category">{movieData.category}</p>
         <div className="button">
-          <button className={`btn ${activeBtn === "like" ? "like-active" : ""}`} onClick={() => handleLike(movieData.id)}>
+          <button
+            onClick={() => handleLike(movieData.id)}
+            className={`btn ${activeBtn === 'like' ? 'like-active' : ''}`}>
             <span className="material-symbols-rounded">thumb_up</span>
             Like {movieData.likes}
           </button>
-          <button className={`btn ${activeBtn === "dislike" ? "dislike-active" : ""}`} onClick={() => handleDislike(movieData.id)}>
+          <button
+            onClick={() => handleDislike(movieData.id)}
+            className={`btn ${
+              activeBtn === 'dislike' ? 'dislike-active' : ''
+            }`}>
             <span className="material-symbols-rounded">thumb_down</span>
             Dislike {movieData.dislikes}
           </button>
@@ -71,6 +77,7 @@ const MovieStyled = styled.div`
     position: absolute;
     top: 5%;
     right: 8%;
+    color: brown;
   }
 
   p {
@@ -78,7 +85,7 @@ const MovieStyled = styled.div`
   }
 
   // Button toggle like/dislike
-  
+
   .btn-container {
     display: flex;
     flex-direction: 'row';
@@ -87,26 +94,25 @@ const MovieStyled = styled.div`
     padding: 30px 50px;
     border-radius: 12px;
   }
- 
+
   .btn {
     border: none;
-    color:#fff;
+    color: #fff;
     font-size: 0.8rem;
     display: flex;
     align-items: center;
-    gap:6px;
+    gap: 6px;
     background-color: #bdc0c5;
     border-radius: 4px;
     padding: 6px 15px;
     margin: 0 10px;
   }
-  
+
   .like-active {
-    background-color: #FF0063;
+    background-color: #ff0063;
   }
-  
+
   .dislike-active {
     background-color: #394350;
   }
-
 `;

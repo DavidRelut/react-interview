@@ -19,7 +19,7 @@ export default function Movies() {
     setMovies(moviesCopyUpdated);
   };
 
-const handleLike = (id) => {
+  const handleLike = (id) => {
   const moviesCopy = [...movies];
   const moviesLikesCopy = moviesCopy
     .filter((movie) => movie.id === id)
@@ -45,9 +45,9 @@ const handleLike = (id) => {
     return moviesLikesCopy
   })
   setMovies(moviesLikesCopy)
-};
-
-const handleDislike = (id) => {
+  };
+  
+  const handleDislike = (id) => {
   const moviesCopy = [...movies];
   const moviesDislikesCopy = moviesCopy
     .filter((movie) => movie.id === id)
@@ -72,7 +72,7 @@ const handleDislike = (id) => {
 
     });
 setMovies(moviesDislikesCopy)
-};;
+  };
 
   return (
     <MoviesStyled>
@@ -93,4 +93,6 @@ setMovies(moviesDislikesCopy)
 const MoviesStyled = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  background: #333;
 `;
