@@ -67,6 +67,10 @@ const MovieStyled = styled.div`
     border-radius: 15px;
   }
 
+  button {
+    cursor: pointer;
+  }
+
   .button {
     display: flex;
     justify-content: space-evenly;
